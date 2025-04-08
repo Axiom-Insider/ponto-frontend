@@ -9,9 +9,10 @@ export default createGlobalStyle`
 }
 
     :root {
-        --primary-color:rgb(55, 104, 168);
+        --primary-color:rgb(2, 78, 177);
         --secondary-color:rgb(2, 24, 55);
         --text-color: rgb(0, 0, 0);
+        --text-color-light: rgb(255, 255, 255);
         --background-color: #fff;
         --font-family: 'Arial', sans-serif;
         --font-size: 16px;

@@ -8,7 +8,7 @@ const Header = () => {
         <Container>
             <Logo>
                 <img src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png" alt="" />
-                <h1>logo</h1>
+                <h1>Imovekx</h1>
             </Logo>
             <Menu>
                 <ul>

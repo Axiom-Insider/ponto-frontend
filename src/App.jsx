@@ -1,14 +1,15 @@
 import Header from "./components/Header"
 import Global from "./styles/Global"
+import Banner from "./components/Banner"
 
 function App() {
 
   return (
-    <>
+    <div>
     <Header />
+    <Banner />
     <Global />
-    <h1>OLA</h1>
-    </>
+    </div>
   )
 }
 
