@@ -5,7 +5,6 @@ import ToCheck from "./TokenExn";
 export default function ProtectedRoute({ admin }) {
   const location = useLocation()
   const { user } = useAuth()
-  console.log(user);
   
   if (!user) {
     if (location.pathname === "/login") {

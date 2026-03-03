@@ -25,7 +25,6 @@ const lerFeriado = async ()=>{
 const anosFeriados = async ()=>{
     try {
         const {data} = await api.get("/feriados/anos")
-        console.log(data);
         
         return data
     } catch (error) {

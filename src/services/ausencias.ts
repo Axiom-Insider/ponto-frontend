@@ -1,18 +1,6 @@
 import api from "../api"
 
-const criarAusencia = async (dataInicio:string, dataFim:string, tipoAusencia:string, id_funcionario:number)=>{
-    try {
 
-        let body = {dataInicio, dataFim, tipoAusencia:formatarTipo(tipoAusencia), id_funcionario}
-        if(!dataFim){
-        body.dataFim = dataInicio
-        }
-        const {data} = await api.post("/ausencia", body)
-        return data
-    } catch (error) {
-        throw error.response?.data || {message: "Erro ao Criar "+formatarTipo(tipoAusencia)}
-    }
-}
 
 const formatarTipo = (e:string)=>{
     const tipo = ['FERIAS', 'ATESTADO', 'LICENCA', 'OUTRO']
@@ -29,6 +17,21 @@ const formatarTipo = (e:string)=>{
             return tipo[0]
     }
 }
+
+const criarAusencia = async (dataInicio:string, dataFim:string, tipoAusencia:string, id_funcionario:number)=>{
+    try {
+
+        let body = {dataInicio, dataFim, tipoAusencia:formatarTipo(tipoAusencia), id_funcionario}
+        if(!dataFim){
+        body.dataFim = dataInicio
+        }
+        const {data} = await api.post("/ausencia", body)
+        return data
+    } catch (error) {
+        throw error.response?.data || {message: "Erro ao Criar "+formatarTipo(tipoAusencia)}
+    }
+}
+
 
 const ano = async (id_funcionario:number)=>{
       try {

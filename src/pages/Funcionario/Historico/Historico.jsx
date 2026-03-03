@@ -33,6 +33,7 @@ export default function Historico() {
         setMesSelect(date.getMonth())
         
         const dados = await horarios.historicoFuncionario(date.getMonth() + 1, date.getFullYear().toString(), user.id)
+        console.log(dados);
         
         setHistorico(dados.historico)
         return

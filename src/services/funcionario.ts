@@ -22,12 +22,11 @@ const getId = async (id:number)=>{
 
 const resetarSenha = async (id:number)=>{
     try {
-        const body = {primeiraEntrada:false, senha:'123'}
-        const {data} = await api.patch("/funcionario/"+id, body)
+        const {data} = await api.patch("/funcionario/resetarSenha/"+id)
 
         return data
     } catch (error) {
-        throw error.response?.data || {message: "Erro ao listar funcionarios"}
+        throw error.response?.data || {message: "Erro ao Resetar Senha"}
     }
 }
 

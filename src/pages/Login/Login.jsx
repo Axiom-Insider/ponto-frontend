@@ -66,7 +66,6 @@ export default function Login() {
 
     try {
       const data = await loginDay(cpf, senha);   
-      console.log(data);
        
       if(!data.primeiraEntrada){
           return navigation("/primeira-entrada", {state:{cpf}, replace:true})

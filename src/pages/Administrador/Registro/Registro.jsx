@@ -64,7 +64,6 @@ export default function Registro() {
      try {
       const body = {nome, matricula, cpf, empresa, turno, cargo}
       const dados = await funcionario.create(body)
-      console.log(dados);
       
       setAlerta(dados.message)
       setTipoAlerta('sucesso')

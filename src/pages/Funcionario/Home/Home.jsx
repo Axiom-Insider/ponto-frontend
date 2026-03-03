@@ -36,7 +36,6 @@ export default function HomeFuncionario() {
     const feachData = async () => {
       try {
         const dadosFuncionario = await funcionario.getId(user.id)
-        console.log(dadosFuncionario);
         
         const { nome, matricula, cargo } = dadosFuncionario
         const dadosHora = await horario.verificar(user.id)
