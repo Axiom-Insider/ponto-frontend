@@ -130,7 +130,7 @@ export default function Registro() {
             <div className="body-horarios">
               <div className="registro-linha">
                 <label htmlFor="" className='form-label'>Nome:</label>
-                <input className='form-control'  value={nome} onChange={(e) => setNome(e.target.value)} type="text" name="nome" />
+                <input className='form-control' value={nome} onChange={(e) => setNome(e.target.value)} type="text" name="nome" required/>
               </div>
               <div className="linha-registro">
                 <div className="registro-linha editar">
@@ -187,20 +187,20 @@ export default function Registro() {
             <div className='body-horarios'>
                 <div className="registro-linha">
                   <label htmlFor="" className='form-label'>Nome:</label>
-                  <input className='form-control' onChange={(e)=>setNome(e.target.value)} type="text" name="nome" id="" required/>
+                  <input className='form-control' value="" onChange={(e)=>setNome(e.target.value)} type="text" name="nome" id="" required/>
                 </div>
               <div className="linha-registro">
                 <div className="registro-linha editar">
                   <label htmlFor="" className='form-label'>Matrícula:</label>
-                  <input className='form-control' onChange={(e)=>setMatricula(e.target.value)} type="number" name="matricula" id="" required/>
+                  <input className='form-control' value="" onChange={(e)=>setMatricula(e.target.value)} type="number" name="matricula" id="" required/>
                 </div>
                  <div className="registro-linha">
                   <label htmlFor="" className='form-label'>CPF:</label>
-                  <input className='form-control' onChange={(e)=>setCpf(e.target.value)} type="text" name="cpf" id="" required/>
+                  <input className='form-control' value="" onChange={(e)=>setCpf(e.target.value)} type="text" name="cpf" id="" required/>
                 </div>
                 <div className="registro-linha editar">
                   <label htmlFor="" className='form-label'>Cargo:</label>
-                  <input className='form-control' onChange={(e)=>setCargo(e.target.value)} type="text" name="matricula" id="" required/>
+                  <input className='form-control' value="" onChange={(e)=>setCargo(e.target.value)} type="text" name="matricula" id="" required/>
                 </div>
               </div>
 

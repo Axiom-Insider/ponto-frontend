@@ -8,7 +8,6 @@ import api from "../api"
   }
 
 const downloadPoloUAB = async (id_funcionario: number, mes: string, ano: string) => {
-    try {
         const mesNome = nomeMes(+mes + 1).toUpperCase()
         const response = await api.get(
             `/documento/polouab/${id_funcionario}/${+mes + 1}/${ano}`,
@@ -27,14 +26,11 @@ const downloadPoloUAB = async (id_funcionario: number, mes: string, ano: string)
         a.download = `${mesNome}-${nomeArquivo}-PoloUAB.docx`; // nome do arquivo
         a.click();
         window.URL.revokeObjectURL(url);
-        return 'foi?'
-    } catch (error) {
-        throw error.response?.data || { message: "Erro ao fazer download de documento" }
-    }
+        return 'Donwload PoloUAB realizado com Sucesso'
+    
 }
 
 const downloadConfianca = async (id_funcionario: number, mes: string, ano: string) => {
-    try {
         const mesNome = nomeMes(+mes + 1)
         const response = await api.get(
             `/documento/confianca/${id_funcionario}/${+mes + 1}/${ano}`,
@@ -56,10 +52,7 @@ const downloadConfianca = async (id_funcionario: number, mes: string, ano: strin
         a.download = `${mesNome}-${nomeArquivo}-Confianca.docx`; // nome do arquivo
         a.click();
         window.URL.revokeObjectURL(url);
-        return 'foi?'
-    } catch (error) {
-        throw error.response?.data || { message: "Erro ao baixar arquivo" }
-    }
+        return "Donwload Confianca realizado com Sucesso"
 }
 
 

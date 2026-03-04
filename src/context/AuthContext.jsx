@@ -5,7 +5,7 @@ import { jwtDecode } from "jwt-decode";
 const AuthContext = createContext();
 
 export const AuthProvider = ({children})=>{
-    const [user, setUser] = useState(false)
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
@@ -17,6 +17,11 @@ export const AuthProvider = ({children})=>{
         setLoading(false)
     }, [])
 
+    const logout = ()=>{
+        setUser(null)
+        localStorage.removeItem("token")
+    }
+
     if(loading){
        return (  <div id="loading" className="hidden">
             <div className="spinner"></div>
@@ -24,10 +29,6 @@ export const AuthProvider = ({children})=>{
           </div>)
     }
 
-    const logout = ()=>{
-        setUser(null)
-        localStorage.removeItem("token")
-    }
 
     return(
         <AuthContext.Provider value={{user, logout}}>

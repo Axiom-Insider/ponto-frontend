@@ -32,8 +32,7 @@ export default function Historico() {
         setAnos(dadosAnos.dados)
         setMesSelect(date.getMonth())
         
-        const dados = await horarios.historicoFuncionario(date.getMonth() + 1, date.getFullYear().toString(), user.id)
-        console.log(dados);
+        const dados = await horarios.historicoFuncionario(date.getMonth(), date.getFullYear().toString(), user.id)
         
         setHistorico(dados.historico)
         return
@@ -50,7 +49,7 @@ export default function Historico() {
       try {
         const date = new Date()
 
-        const dados = await horarios.historicoFuncionario(mesSelect || date.getMonth() + 1, anoSelect || date.getFullYear().toString(), user.id)
+        const dados = await horarios.historicoFuncionario(mesSelect || date.getMonth(), anoSelect || date.getFullYear().toString(), user.id)
         
         setHistorico(dados.historico)
         return
@@ -65,7 +64,7 @@ export default function Historico() {
 
   const ausenciaFeriados = (ausencia, feriados)=>{
     if(ausencia && feriados){
-      return `${feriados}/${ausencia}`
+      return `${feriados} | ${ausencia}`
     }if(ausencia){
       return ausencia
     }
@@ -129,7 +128,7 @@ export default function Historico() {
             {historico.map((item) => (
               <tr key={item.dia} className="dados trHover">
                 <td className='data-historico'>{item.dia} - {item.nomeDia === 'Sábado' || item.nomeDia === 'Domingo' ? <strong>{item.nomeDia}</strong> : <>{item.nomeDia}</> }</td>
-                <td>{ausenciaFeriados(item.ausencias, item.feriados)}</td>
+                <td>{ausenciaFeriados(item.ausencia, item.feriado)}</td>
                 <td>{item.nomeDia == 'Domingo' ? '--------' : <>{item.entrada}</>}</td>
                 <td>{item.nomeDia == 'Domingo' ? '--------' : <>{item.saida}</>}</td>
               </tr>

@@ -15,9 +15,8 @@ export default function ToCheck() {
             logout()
             return <Navigate to="/login" state={{erro:"As credenciais expiraram"}} replace />;
         }
-    } catch (error) {
+    } catch {
          logout()
-         console.log(error);
          return <Navigate to="/login" state={{erro:"As credenciais expiraram"}} replace />;
     }
 }

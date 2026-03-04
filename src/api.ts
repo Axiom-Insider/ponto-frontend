@@ -18,9 +18,8 @@ api.interceptors.request.use(
     return config;
   },
   (error) => {
-    console.log(error)
-    
-    return Promise.reject(error);
+    const message = error.response?.data?.message || "Erro inesperado";
+    return Promise.reject(message);
   }
 )
 
